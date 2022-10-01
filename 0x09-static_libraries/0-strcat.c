@@ -1,44 +1,29 @@
-
-KingTune
-/
-alx-low_level_programming
-Public
-Code
-Issues
-Pull requests
-Actions
-Projects
-Security
-Insights
-alx-low_level_programming/0x09-static_libraries/sources/0-strcat.c
-@KingTune
-KingTune Static libraries
- 1 contributor
-27 lines (23 sloc)  415 Bytes
 #include "main.h"
-
 /**
- * _strcat - Concatenates two strings
- * @dest: Destination string
- * @src: Source string
+ * _strcat - concatenates two strings
+ * @dest: input value
+ * @src: input value
  *
- * Return: A pointer to the resulting string dest
+ * Return: void
  */
 char *_strcat(char *dest, char *src)
 {
-	int destLen = 0;
-	int srcLen = 0;
+	int i;
+	int j;
 
-	while (dest[destLen] != '\0')
-		destLen++;
-
-	while (src[srcLen])
+	i = 0;
+	while (dest[i] != '\0')
 	{
-		dest[destLen] = src[srcLen];
-		srcLen++;
-		destLen++;
+		i++;
 	}
-	dest[destLen] = '\0';
+	j = 0;
+	while (src[j] != '\0')
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
 
 	return (dest);
 }
